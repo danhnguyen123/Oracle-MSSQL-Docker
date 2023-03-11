@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  sql-server:
+    container_name: sql-server
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    ports:
+      - "1433:1433"
+    env_file: ./.env
+    environment:
+      - MSSQL_SA_PASSWORD=${MSSQL_PASSWORD}
+      - ACCEPT_EULA=Y
+
+  oracle:
+    container_name: oracle
+    image: oracle/database:19.3.0-se2
+    ports:
+        - '1521:1521'
+        - '5500:5500'
+    env_file: ./.env
+    environment:
+        - ORACLE_PWD=${ORACLE_PASSWORD}
+    # volumes:
+    #     - '~/db/oracle:/opt/oracle/oradata'

@@ -1,0 +1,7 @@
+pandas
+python-dotenv
+pyodbc
+SQLAlchemy
+psycopg2
+tqdm
+cx-Oracle
